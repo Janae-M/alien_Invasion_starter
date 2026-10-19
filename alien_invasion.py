@@ -30,7 +30,7 @@ class AlienInvasion:
                     self.running = False
                     pygame.quit()
                     sys.exit()
-
+            self.screen.blit(self.bg, (0,0))
             pygame.display.flip()
             self.clock.tick(self.settings.FPS)
 
