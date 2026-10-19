@@ -3,7 +3,7 @@ import pygame
 from settings import Settings
 
 class AlienInvasion:
-    """gmae assets and behavior"""
+    """game assets and behavior"""
     def __init__(self):
         """running game"""
         pygame.init()
@@ -14,7 +14,10 @@ class AlienInvasion:
             )
         pygame.display.set_caption("self.settings.name")
 
-        self.bg
+        self.bg = pygame.image.load(self.settings.bg_file)
+        self.bg = pygame.transform.scale(self.bg, 
+            (self.settings.screen_w, self.settings.screen_h)
+            )
 
         self.running = True
         self.clock = pygame.time.Clock()
@@ -29,7 +32,7 @@ class AlienInvasion:
                     sys.exit()
 
             pygame.display.flip()
-            self.clock.tick(self.setings.fps)
+            self.clock.tick(self.settings.FPS)
 
 if __name__ == '__main__':
     ai = AlienInvasion()
