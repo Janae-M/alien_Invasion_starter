@@ -12,3 +12,4 @@ class Settings:
         self.ship_file = Path.cwd() / 'Assets' / 'images' / 'ship3.png'
         self.ship_w = 40
         self.ship_h = 60
+        self.ship_speed = 5
