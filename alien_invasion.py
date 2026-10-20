@@ -22,7 +22,7 @@ class AlienInvasion:
         self.running = True
         self.clock = pygame.time.Clock()
 
-    def run_game(self):
+    def run_game(self) -> None:
         """game loop"""
         while self.running:
             for event in pygame.event.get():
