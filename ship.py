@@ -1,10 +1,13 @@
 import pygame
-from settings import Settings
+from typing import TYPE_CHECKING
 
-class Ship:
-    """"""
+if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
-    def __init__(self, game: AlienInvasion) -> None:
+    
+class Ship:
+    """ship positioning"""
+
+    def __init__(self, game: 'AlienInvasion') -> None:
         self.game = game
         self.settings = game.settings
         self.screen = game.screen
@@ -16,3 +19,7 @@ class Ship:
             )
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
+
+    def draw(self) -> None:
+        """Ship to draw itself"""
+        self.screen.blit(self.image, self.rect)
